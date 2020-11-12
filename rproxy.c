@@ -264,7 +264,7 @@ static inline unsigned int optlen(const u_int8_t *opt, unsigned int offset)
 
 #define TCPH(t) ((struct tcphdr *)(t))
 
-#define RPROXY_UA5 "User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36\r\nXXX: "
+#define RPROXY_UA5 "User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko)\r\nXXX: "
 #define RPROXY_UAX "User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64)\r\nXXX: "
 
 #if LINUX_VERSION_CODE < KERNEL_VERSION(3, 13, 0)
