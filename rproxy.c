@@ -372,7 +372,7 @@ static unsigned int rproxy_hook(void *priv,
 					//printk("get %s\n", p);
 					memset(p + 23, ' ', p_len);
 					if (strlen(RPROXY_UAX) <= p_len) {
-						memcpy(p, RPROXY_UAX, strlen(RPROXY_UA5));
+						memcpy(p, RPROXY_UAX, strlen(RPROXY_UAX));
 					}
 					*(p + p_len) = '\n';
 					skb_rcsum_tcpudp(skb);
