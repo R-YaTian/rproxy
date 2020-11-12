@@ -264,6 +264,7 @@ static inline unsigned int optlen(const u_int8_t *opt, unsigned int offset)
 
 #define TCPH(t) ((struct tcphdr *)(t))
 
+#define RPROXY_UA5 "User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36\r"
 #define RPROXY_UAX "User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64)\r\nXXX: "
 
 #if LINUX_VERSION_CODE < KERNEL_VERSION(3, 13, 0)
@@ -371,8 +372,8 @@ static unsigned int rproxy_hook(void *priv,
 					*(p + p_len) = '\0';
 					//printk("get %s\n", p);
 					memset(p + 23, ' ', p_len);
-					if (strlen(RPROXY_UAX) <= p_len) {
-						memcpy(p, RPROXY_UAX, strlen(RPROXY_UAX));
+					if (strlen(RPROXY_UA5) <= p_len) {
+						memcpy(p, RPROXY_UA5, strlen(RPROXY_UA5));
 					}
 					*(p + p_len) = '\n';
 					skb_rcsum_tcpudp(skb);
